@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
 
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 import { useGetGifsFetch } from './hooks/useGetGifsFetch';
 
 const GifExpertApp = () => {
-    const [categories, setCategories] = useState(['Naruto','Dragon Ball']);
+    const [categories, setCategories] = useState([]);
 
     return(
         <>
             <h1>GifExpertApp</h1>
-            <hr />
             <AddCategory />
+            <hr />
             
-            <ol>
                 {
                     categories.map( category => (
-                        <li key={category}>{category}</li>
+                        <GifGrid
+                            key={category}
+                            category={category}
+                        />
                     ))
                 }
-            </ol>
         </>
     )
 }
