@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
 import { AddCategory } from './components/AddCategory';
-import { getGifsFetch } from './helpers/getGifsFetch';
+import { useGetGifsFetch } from './hooks/useGetGifsFetch';
 
 const GifExpertApp = () => {
     const [categories, setCategories] = useState(['Naruto','Dragon Ball']);
-
-    getGifsFetch();
 
     return(
         <>
